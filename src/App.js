@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import ExpenseItem from './components/ExpenseItem';
-import Expenses from './components/Expenses';
+import ExpenseItem from './components/Expenses/ExpenseItem';
+import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
+import ExpensesFilter from './components/Expenses/ExpensesFilter';
 
-function App() {
+const App = () =>{
 
   const expenses = [
     {
@@ -27,6 +29,11 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = expense =>{
+    console.log("App.js");
+    console.log(expense);
+  };
+
   // return React.createElement(
   //   'div',
   //   {},
@@ -35,7 +42,8 @@ function App() {
   // );
 
   return (
-    <div className='App'>
+    <div>
+    <NewExpense onAddExpense={addExpenseHandler} />
     <Expenses expenses={expenses}/>
     </div>
     

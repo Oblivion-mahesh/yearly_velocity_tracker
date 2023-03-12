@@ -1,18 +1,22 @@
 import React from 'react';
-import App from "../App";
 import ExpenseItem from "./ExpenseItem";
 import './Expenses.css'
-import Card from'./Card.css'
-function Expenses(props){
+import Card from '../Ui/Card';
+import ExpensesFilter from './ExpensesFilter';
+const Expenses = (props) =>{
 
       return(
-        <div className="expenses">
-        <h2>Expense product</h2>
+        
+          
+        <Card className="expenses">
+        <div>
+        <ExpensesFilter/>
+        </div>
         <ExpenseItem title={props.expenses[0].title} amount={props.expenses[0].amount} date={props.expenses[0].date}></ExpenseItem>
         <ExpenseItem title={props.expenses[1].title} amount={props.expenses[1].amount} date={props.expenses[1].date}></ExpenseItem>
         <ExpenseItem title={props.expenses[2].title} amount={props.expenses[2].amount} date={props.expenses[2].date}></ExpenseItem>
-      </div>
-
+      </Card>
+      
       );
 }
 export default Expenses;
